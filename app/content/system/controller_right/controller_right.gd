@@ -7,6 +7,7 @@ const Touch = preload ("res://lib/utils/touch/touch.gd")
 const Collide = preload ("res://lib/utils/touch/collide.gd")
 const Miniature = preload ("res://content/system/miniature/miniature.gd")
 
+@onready var palm = $Palm
 @onready var ray: RayCast3D = $Raycast
 @onready var hand: Node3D = $hand_r
 @onready var hand_mesh = $hand_r/Armature/Skeleton3D/mesh_Hand_R
@@ -63,6 +64,12 @@ func _setup_hand():
 		$IndexTip/TouchArea/CollisionShape3D.disabled=!hand_active
 		hand_mesh.visible=active
 	)
+
+func _process(_delta):
+	if App.camera.global_transform.basis.z.dot(-palm.global_transform.basis.x) > 0.85:
+		if ray.is_inside_tree(): remove_child(ray)
+	else:
+		if not ray.is_inside_tree(): add_child(ray)
 
 func _physics_process(_delta):
 	if !hand_active: return

@@ -19,6 +19,7 @@ const Entity = preload ("res://content/entities/entity.gd")
 @onready var mini_view_button = $Palm/QuickActions/MiniView
 @onready var temperature_button = $Palm/QuickActions/Temperature
 @onready var humidity_button = $Palm/QuickActions/Humidity
+@onready var menu_icon = $Palm/QuickActions/MenuIcon
 
 @onready var palm = $Palm
 @onready var ray: RayCast3D = $Raycast
@@ -54,6 +55,12 @@ var grabbed = false
 var moving_entity = null
 
 func _ready():
+	var xr = XRServer.find_interface("OpenXR")
+	if xr and xr.is_initialized():
+		var info = xr.get_system_info()
+		if not OS.has_feature("androidxr"):
+			menu_icon.queue_free()
+	
 	_setup_hand()
 
 	palm.remove_child(entity_settings)
@@ -91,9 +98,13 @@ func _process(_delta):
 		return
 
 	if App.camera.global_transform.basis.z.dot(palm.global_transform.basis.x) > 0.85:
+		App.menu.is_menu_gesture_ready = true
 		if quick_actions.is_inside_tree() == false: palm.add_child(quick_actions)
+		if ray.is_inside_tree(): remove_child(ray)
 	else:
+		App.menu.is_menu_gesture_ready = false
 		if quick_actions.is_inside_tree(): palm.remove_child(quick_actions)
+		if not ray.is_inside_tree(): add_child(ray)
 
 func _physics_process(_delta):
 	if !hand_active: return
