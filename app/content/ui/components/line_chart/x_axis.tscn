@@ -1,8 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://bb3shmvedk1oh"]
+[gd_scene format=3 uid="uid://bb3shmvedk1oh"]
 
-[ext_resource type="Script" path="res://content/ui/components/line_chart/x_axis.gd" id="1_5fiu5"]
+[ext_resource type="Script" uid="uid://b7cliwaglik5x" path="res://content/ui/components/line_chart/x_axis.gd" id="1_5fiu5"]
 
-[node name="XAxis" type="Control"]
+[node name="XAxis" type="Control" unique_id=647080427]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -11,7 +11,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_5fiu5")
 
-[node name="AxisLabels" type="Control" parent="."]
+[node name="AxisLabels" type="Control" parent="." unique_id=1199590915]
 anchors_preset = 0
 offset_right = 169.0
 offset_bottom = 111.0

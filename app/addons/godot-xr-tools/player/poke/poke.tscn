@@ -1,7 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://bjcxf427un2wp"]
+[gd_scene format=3 uid="uid://bjcxf427un2wp"]
 
-[ext_resource type="Script" path="res://addons/godot-xr-tools/player/poke/poke.gd" id="1"]
-[ext_resource type="Script" path="res://addons/godot-xr-tools/player/poke/poke_body.gd" id="2"]
+[ext_resource type="Script" uid="uid://ckmtxgo7bakgt" path="res://addons/godot-xr-tools/player/poke/poke.gd" id="1"]
+[ext_resource type="Script" uid="uid://bhmyulhae4fkk" path="res://addons/godot-xr-tools/player/poke/poke_body.gd" id="2"]
 
 [sub_resource type="SphereShape3D" id="1"]
 resource_local_to_scene = true
@@ -14,27 +14,27 @@ height = 0.01
 radial_segments = 32
 rings = 16
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g1b1h"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0m6vj"]
 transparency = 1
 shading_mode = 0
 albedo_color = Color(0.8, 0.8, 1, 0.5)
 
-[node name="Poke" type="Node3D"]
+[node name="Poke" type="Node3D" unique_id=2038984526]
 script = ExtResource("1")
 
-[node name="PokeBody" type="AnimatableBody3D" parent="."]
+[node name="PokeBody" type="AnimatableBody3D" parent="." unique_id=1863322155]
 top_level = true
 collision_layer = 131072
 collision_mask = 4259839
 sync_to_physics = false
 script = ExtResource("2")
 
-[node name="CollisionShape" type="CollisionShape3D" parent="PokeBody"]
+[node name="CollisionShape" type="CollisionShape3D" parent="PokeBody" unique_id=866956805]
 shape = SubResource("1")
 
-[node name="MeshInstance" type="MeshInstance3D" parent="PokeBody"]
+[node name="MeshInstance" type="MeshInstance3D" parent="PokeBody" unique_id=999654732]
 mesh = SubResource("2")
-surface_material_override/0 = SubResource("StandardMaterial3D_g1b1h")
+surface_material_override/0 = SubResource("StandardMaterial3D_0m6vj")
 
 [connection signal="body_contact_end" from="PokeBody" to="." method="_on_PokeBody_body_contact_end"]
 [connection signal="body_contact_start" from="PokeBody" to="." method="_on_PokeBody_body_contact_start"]

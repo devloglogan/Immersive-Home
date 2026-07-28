@@ -1,7 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://cfsnkoxb7mtok"]
+[gd_scene format=3 uid="uid://cfsnkoxb7mtok"]
 
 [ext_resource type="PackedScene" uid="uid://dqjcqdhe3rbtn" path="res://assets/models/trash_bin/trash_bin.gltf" id="1_g2oxl"]
-[ext_resource type="Script" path="res://content/system/trash_bin/trash_bin.gd" id="1_krk5w"]
+[ext_resource type="Script" uid="uid://dujj4mv44org2" path="res://content/system/trash_bin/trash_bin.gd" id="1_krk5w"]
 [ext_resource type="AudioStream" uid="uid://bm2uxwqfmnvs6" path="res://assets/sound/crumple.mp3" id="3_p7u0v"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_fmaps"]
@@ -65,29 +65,27 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_hrejr"]
 _data = {
-"RESET": SubResource("Animation_wg64y"),
-"add_trashbin": SubResource("Animation_cxelh")
+&"RESET": SubResource("Animation_wg64y"),
+&"add_trashbin": SubResource("Animation_cxelh")
 }
 
-[node name="TrashBin" type="Node3D"]
+[node name="TrashBin" type="Node3D" unique_id=324939000]
 script = ExtResource("1_krk5w")
 
-[node name="trash_bin" parent="." instance=ExtResource("1_g2oxl")]
+[node name="trash_bin" parent="." unique_id=469458317 instance=ExtResource("1_g2oxl")]
 transform = Transform3D(0.03, 0, 0, 0, 0.03, 0, 0, 0, 0.03, 0, -0.02, 0)
 
-[node name="Area3D" type="Area3D" parent="trash_bin"]
+[node name="Area3D" type="Area3D" parent="trash_bin" unique_id=1871153769]
 transform = Transform3D(25, 0, 0, 0, 25, 0, 0, 0, 25, 0, 0, 0)
 collision_layer = 0
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="trash_bin/Area3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="trash_bin/Area3D" unique_id=1192438590]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0542412, 0)
 shape = SubResource("CylinderShape3D_fmaps")
 
-[node name="DeleteSound" type="AudioStreamPlayer3D" parent="."]
+[node name="DeleteSound" type="AudioStreamPlayer3D" parent="." unique_id=1177420293]
 stream = ExtResource("3_p7u0v")
 volume_db = -10.0
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_hrejr")
-}
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=992241858]
+libraries/ = SubResource("AnimationLibrary_hrejr")

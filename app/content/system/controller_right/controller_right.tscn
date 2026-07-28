@@ -37,7 +37,7 @@ enableautotracker = false
 
 [node name="hand_r" parent="." unique_id=568842998 instance=ExtResource("2_kex6u")]
 
-[node name="mesh_Hand_R" parent="hand_r/Armature/Skeleton3D" parent_id_path=PackedInt32Array(568842998, 58017375) index="0" unique_id=662290862]
+[node name="mesh_Hand_R" parent="hand_r/Armature/Skeleton3D" parent_id_path=PackedInt32Array(568842998, 1446167343) index="0" unique_id=1648266567]
 material_override = ExtResource("4_vhkya")
 
 [node name="IndexTip" type="BoneAttachment3D" parent="." unique_id=168029548]

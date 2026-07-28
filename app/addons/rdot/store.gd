@@ -2,17 +2,17 @@ extends Object
 class_name RdotStore
 
 var _proxied_value = {}
-var _property_list = []
+var _property_list: Array[Dictionary]
 
 func _init(initial_value: Dictionary={}):
 	_proxied_value = initial_value
 
-	_property_list = _proxied_value.keys().map(func(key):
+	_property_list.assign(_proxied_value.keys().map(func(key):
 		return {
 			"name": key,
 			"type": typeof(_proxied_value[key])
 		}
-	)
+	))
 
 func _get(property):
 	_access_property(property)
@@ -33,5 +33,5 @@ func _access_property(property):
 	if (_proxied_value[property] is R.RdotState) == false:
 		_proxied_value[property] = R.state(_proxied_value[property])
 
-func _get_property_list():
+func _get_property_list() -> Array[Dictionary]:
 	return _property_list

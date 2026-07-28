@@ -188,6 +188,8 @@ func _property_get_revert(property : StringName): # Variant
 			return false
 		"filter":
 			return true
+		_:
+			return false
 
 
 ## Get the 2D scene instance

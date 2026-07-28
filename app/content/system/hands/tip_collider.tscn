@@ -1,9 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://cu33x58yh0mhy"]
+[gd_scene format=3 uid="uid://cu33x58yh0mhy"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_65tyn"]
 radius = 0.01
 
-[node name="TipCollider" type="RigidBody3D"]
+[node name="TipCollider" type="RigidBody3D" unique_id=484843573]
 collision_layer = 4
 collision_mask = 4
 axis_lock_angular_x = true
@@ -14,5 +14,5 @@ gravity_scale = 0.0
 linear_damp = 50.0
 angular_damp = 50.0
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=465486163]
 shape = SubResource("SphereShape3D_65tyn")

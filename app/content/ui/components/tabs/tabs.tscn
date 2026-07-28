@@ -1,6 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://doavdm6fskmrt"]
+[gd_scene format=3 uid="uid://doavdm6fskmrt"]
 
-[ext_resource type="Script" path="res://content/ui/components/tabs/tabs.gd" id="1_xt6wm"]
+[ext_resource type="Script" uid="uid://6ue4tknppp0g" path="res://content/ui/components/tabs/tabs.gd" id="1_xt6wm"]
 
-[node name="Tabs" type="Node3D"]
+[node name="Tabs" type="Node3D" unique_id=412768681]
 script = ExtResource("1_xt6wm")

@@ -1,7 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://pk5k1q8bx0rj"]
+[gd_scene format=3 uid="uid://pk5k1q8bx0rj"]
 
-[ext_resource type="Script" path="res://content/ui/components/slider/slider.gd" id="1_ylune"]
-[ext_resource type="Shader" path="res://content/ui/components/panel/glass.gdshader" id="2_by0d8"]
+[ext_resource type="Script" uid="uid://dqf27mvps6yj7" path="res://content/ui/components/slider/slider.gd" id="1_ylune"]
+[ext_resource type="Shader" uid="uid://iy8r68qd33qd" path="res://content/ui/components/panel/glass.gdshader" id="2_by0d8"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_h1mn1"]
 resource_local_to_scene = true
@@ -14,7 +14,7 @@ shader = ExtResource("2_by0d8")
 shader_parameter/color = Color(1, 1, 1, 0.3)
 shader_parameter/border_color = Color(1, 1, 1, 1)
 shader_parameter/edge_color = Color(0, 0, 0, 1)
-shader_parameter/size = Vector2(1.5, 0.2)
+shader_parameter/size = Vector2(1.5, 0.19999999)
 shader_parameter/border_size = 0.005
 shader_parameter/border_fade_in = 0.04
 shader_parameter/border_fade_out = 0.0
@@ -33,7 +33,7 @@ shader = ExtResource("2_by0d8")
 shader_parameter/color = Color(1, 1, 1, 0.3)
 shader_parameter/border_color = Color(1, 1, 1, 1)
 shader_parameter/edge_color = Color(0, 0, 0, 1)
-shader_parameter/size = Vector2(0.15, 0.15)
+shader_parameter/size = Vector2(0.14999999, 0.14999999)
 shader_parameter/border_size = 0.002
 shader_parameter/border_fade_in = 0.02
 shader_parameter/border_fade_out = 0.0
@@ -49,26 +49,26 @@ size = Vector2(0.015, 0.015)
 resource_local_to_scene = true
 size = Vector3(0.15, 0.02, 0.01)
 
-[node name="Slider" type="Node3D"]
+[node name="Slider" type="Node3D" unique_id=1183456739]
 script = ExtResource("1_ylune")
 show_label = true
 size = Vector3(0.15, 0.02, 0.01)
 
-[node name="Body" type="StaticBody3D" parent="."]
+[node name="Body" type="StaticBody3D" parent="." unique_id=237970551]
 collision_layer = 6
 collision_mask = 6
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Body"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Body" unique_id=1941363846]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.005)
 shape = SubResource("BoxShape3D_h1mn1")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Body"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Body" unique_id=1078232681]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.01)
 material_override = SubResource("ShaderMaterial_vgpd3")
 mesh = SubResource("QuadMesh_k78f4")
 
-[node name="Label" type="Label3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.08, 0, 0.01)
+[node name="Label" type="Label3D" parent="." unique_id=429740406]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.080000006, 0, 0.01)
 pixel_size = 0.001
 render_priority = 30
 outline_render_priority = 29
@@ -77,16 +77,16 @@ font_size = 10
 outline_size = 4
 horizontal_alignment = 0
 
-[node name="Knob" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.039, 0, 0.012)
+[node name="Knob" type="MeshInstance3D" parent="." unique_id=74321855]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.039000005, 0, 0.012)
 material_override = SubResource("ShaderMaterial_mv0la")
 mesh = SubResource("QuadMesh_vw14o")
 skeleton = NodePath("../Body")
 
-[node name="Area3D" type="Area3D" parent="."]
+[node name="Area3D" type="Area3D" parent="." unique_id=34071586]
 collision_layer = 4
 collision_mask = 4
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1639073186]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.015)
 shape = SubResource("BoxShape3D_s64dk")
