@@ -1,9 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://ddpxthb414unp"]
+[gd_scene format=3 uid="uid://ddpxthb414unp"]
 
-[ext_resource type="Script" path="res://content/ui/menu/view/view_menu.gd" id="1_hxajx"]
+[ext_resource type="Script" uid="uid://bg5dhtog07o3" path="res://content/ui/menu/view/view_menu.gd" id="1_hxajx"]
 [ext_resource type="PackedScene" uid="uid://bsjqdvkt0u87c" path="res://content/ui/components/button/button.tscn" id="2_qan1b"]
 [ext_resource type="PackedScene" uid="uid://pk5k1q8bx0rj" path="res://content/ui/components/slider/slider.tscn" id="4_d3xhb"]
-[ext_resource type="Shader" path="res://content/ui/components/panel/glass.gdshader" id="5_cjxo5"]
+[ext_resource type="Shader" uid="uid://iy8r68qd33qd" path="res://content/ui/components/panel/glass.gdshader" id="5_cjxo5"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_e5hvo"]
 render_priority = 10
@@ -22,18 +22,18 @@ shader_parameter/grain_amount = 0.02
 [sub_resource type="QuadMesh" id="QuadMesh_1j6jf"]
 size = Vector2(0.42, 0.32)
 
-[node name="ViewMenu" type="Node3D"]
+[node name="ViewMenu" type="Node3D" unique_id=1012959550]
 script = ExtResource("1_hxajx")
 
-[node name="Content" type="Node3D" parent="."]
+[node name="Content" type="Node3D" parent="." unique_id=1106363160]
 
-[node name="MiniView" parent="Content" instance=ExtResource("2_qan1b")]
+[node name="MiniView" parent="Content" unique_id=152822892 instance=ExtResource("2_qan1b")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.04, -0.04, 0)
 label = "view_comfy"
 icon = true
 toggleable = true
 
-[node name="MiniViewLabel" type="Label3D" parent="Content"]
+[node name="MiniViewLabel" type="Label3D" parent="Content" unique_id=824475361]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.07, -0.04, 0)
 pixel_size = 0.001
 double_sided = false
@@ -44,13 +44,13 @@ font_size = 18
 outline_size = 0
 horizontal_alignment = 0
 
-[node name="HeatMap" parent="Content" instance=ExtResource("2_qan1b")]
+[node name="HeatMap" parent="Content" unique_id=2079246916 instance=ExtResource("2_qan1b")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.04, -0.1, 0)
 label = "device_thermostat"
 icon = true
 toggleable = true
 
-[node name="HeatMapLabel" type="Label3D" parent="Content"]
+[node name="HeatMapLabel" type="Label3D" parent="Content" unique_id=756710422]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.07, -0.1, 0)
 pixel_size = 0.001
 double_sided = false
@@ -61,13 +61,13 @@ font_size = 18
 outline_size = 0
 horizontal_alignment = 0
 
-[node name="HumidityMap" parent="Content" instance=ExtResource("2_qan1b")]
+[node name="HumidityMap" parent="Content" unique_id=566560931 instance=ExtResource("2_qan1b")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.04, -0.16, 0)
 label = "humidity_mid"
 icon = true
 toggleable = true
 
-[node name="HumidityMapLabel" type="Label3D" parent="Content"]
+[node name="HumidityMapLabel" type="Label3D" parent="Content" unique_id=1997084958]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.07, -0.16, 0)
 pixel_size = 0.001
 double_sided = false
@@ -78,12 +78,12 @@ font_size = 18
 outline_size = 0
 horizontal_alignment = 0
 
-[node name="MinSlider" parent="Content" instance=ExtResource("4_d3xhb")]
+[node name="MinSlider" parent="Content" unique_id=342162852 instance=ExtResource("4_d3xhb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.09, -0.21, 0)
 value = 0.0
 step = 1.0
 
-[node name="MinValue" type="Label3D" parent="Content"]
+[node name="MinValue" type="Label3D" parent="Content" unique_id=2012554600]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2, -0.21, 0)
 pixel_size = 0.001
 double_sided = false
@@ -94,12 +94,12 @@ font_size = 18
 outline_size = 0
 horizontal_alignment = 0
 
-[node name="MaxSlider" parent="Content" instance=ExtResource("4_d3xhb")]
+[node name="MaxSlider" parent="Content" unique_id=665328784 instance=ExtResource("4_d3xhb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.09, -0.25, 0)
 value = 0.0
 step = 1.0
 
-[node name="MaxValue" type="Label3D" parent="Content"]
+[node name="MaxValue" type="Label3D" parent="Content" unique_id=568279615]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2, -0.25, 0)
 pixel_size = 0.001
 double_sided = false
@@ -110,14 +110,14 @@ font_size = 18
 outline_size = 0
 horizontal_alignment = 0
 
-[node name="OpacitySlider" parent="Content" instance=ExtResource("4_d3xhb")]
+[node name="OpacitySlider" parent="Content" unique_id=261021384 instance=ExtResource("4_d3xhb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.09, -0.29, 0)
 max = 100.0
 value = 30.0
 step = 10.0
 label_unit = "%"
 
-[node name="OpacityLabel" type="Label3D" parent="Content"]
+[node name="OpacityLabel" type="Label3D" parent="Content" unique_id=1305463648]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2, -0.29, 0)
 pixel_size = 0.001
 double_sided = false
@@ -128,7 +128,7 @@ font_size = 18
 outline_size = 0
 horizontal_alignment = 0
 
-[node name="Background" type="MeshInstance3D" parent="."]
+[node name="Background" type="MeshInstance3D" parent="." unique_id=901861919]
 transform = Transform3D(1, 0, 0, 0, 1, 1.06581e-14, 0, -1.06581e-14, 1, 0.21, -0.16, 0)
 material_override = SubResource("ShaderMaterial_e5hvo")
 mesh = SubResource("QuadMesh_1j6jf")

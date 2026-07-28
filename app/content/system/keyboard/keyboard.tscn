@@ -1,10 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://lrehk38exd5n"]
+[gd_scene format=3 uid="uid://lrehk38exd5n"]
 
-[ext_resource type="Script" path="res://content/system/keyboard/keyboard.gd" id="1_maojw"]
+[ext_resource type="Script" uid="uid://cdm8rsm76p54t" path="res://content/system/keyboard/keyboard.gd" id="1_maojw"]
 [ext_resource type="PackedScene" uid="uid://bsjqdvkt0u87c" path="res://content/ui/components/button/button.tscn" id="1_xdpwr"]
-[ext_resource type="Script" path="res://content/ui/components/grid_container/grid_container.gd" id="3_mx544"]
-[ext_resource type="Script" path="res://content/functions/movable.gd" id="4_86fct"]
-[ext_resource type="Shader" path="res://content/ui/components/panel/glass.gdshader" id="5_0dbg6"]
+[ext_resource type="Script" uid="uid://cwqirn1wimwwj" path="res://content/ui/components/grid_container/grid_container.gd" id="3_mx544"]
+[ext_resource type="Script" uid="uid://l2fgupqbucew" path="res://content/functions/movable.gd" id="4_86fct"]
+[ext_resource type="Shader" uid="uid://iy8r68qd33qd" path="res://content/ui/components/panel/glass.gdshader" id="5_0dbg6"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_k5ib7"]
 size = Vector3(0.86, 0.27, 0.02)
@@ -26,13 +26,13 @@ shader_parameter/grain_amount = 0.02
 [sub_resource type="QuadMesh" id="QuadMesh_88pdc"]
 size = Vector2(0.86, 0.27)
 
-[node name="Keyboard" type="StaticBody3D" groups=["ui_focus_stop"]]
+[node name="Keyboard" type="StaticBody3D" unique_id=61714130 groups=["ui_focus_stop"]]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 collision_layer = 6
 collision_mask = 0
 script = ExtResource("1_maojw")
 
-[node name="Backspace" parent="." instance=ExtResource("1_xdpwr")]
+[node name="Backspace" parent="." unique_id=1875256518 instance=ExtResource("1_xdpwr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.38, 0.09, 0)
 focusable = false
 label = "backspace"
@@ -41,7 +41,7 @@ echo = true
 size = Vector3(0.05, 0.05, 0.01)
 metadata/key = 4194308
 
-[node name="Caps" parent="." instance=ExtResource("1_xdpwr")]
+[node name="Caps" parent="." unique_id=426041745 instance=ExtResource("1_xdpwr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.39, -0.03, 0)
 focusable = false
 label = "keyboard_capslock"
@@ -49,27 +49,27 @@ icon = true
 toggleable = true
 size = Vector3(0.05, 0.05, 0.01)
 
-[node name="Paste" parent="." instance=ExtResource("1_xdpwr")]
+[node name="Paste" parent="." unique_id=1330532340 instance=ExtResource("1_xdpwr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.38, -0.09, 0)
 focusable = false
 label = "assignment"
 icon = true
 size = Vector3(0.05, 0.05, 0.01)
 
-[node name="Keys" type="Node3D" parent="."]
+[node name="Keys" type="Node3D" parent="." unique_id=1089655157]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.325, 0.09, 0)
 script = ExtResource("3_mx544")
 columns = 11
 gaps = Vector2(0.01, 0.01)
 size = Vector3(0.6, 0.15, 1)
 
-[node name="Movable" type="Node" parent="."]
+[node name="Movable" type="Node" parent="." unique_id=1785021073]
 script = ExtResource("4_86fct")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2123554907]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.01)
 shape = SubResource("BoxShape3D_k5ib7")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=235517265]
 material_override = SubResource("ShaderMaterial_x72nd")
 mesh = SubResource("QuadMesh_88pdc")

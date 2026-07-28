@@ -1,19 +1,19 @@
-[gd_scene load_steps=9 format=3 uid="uid://de34yde00ngkv"]
+[gd_scene format=3 uid="uid://de34yde00ngkv"]
 
 [ext_resource type="PackedScene" uid="uid://dnam3fe36gg62" path="res://content/ui/components/panel/panel.tscn" id="1_78ups"]
-[ext_resource type="Script" path="res://content/entities/light/settings.gd" id="1_gw2gi"]
-[ext_resource type="Shader" path="res://content/ui/components/panel/glass.gdshader" id="2_m4moa"]
+[ext_resource type="Script" uid="uid://57fih1cxxe44" path="res://content/entities/light/settings.gd" id="1_gw2gi"]
+[ext_resource type="Shader" uid="uid://iy8r68qd33qd" path="res://content/ui/components/panel/glass.gdshader" id="2_m4moa"]
 [ext_resource type="PackedScene" uid="uid://bsjqdvkt0u87c" path="res://content/ui/components/button/button.tscn" id="3_2gpr3"]
 [ext_resource type="PackedScene" uid="uid://blrhy2uccrdn4" path="res://content/ui/components/input/input.tscn" id="4_upyp3"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_00j7x"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tmdm3"]
 resource_local_to_scene = true
 render_priority = 10
 shader = ExtResource("2_m4moa")
 shader_parameter/color = Color(1, 1, 1, 0.3)
 shader_parameter/border_color = Color(1, 1, 1, 1)
 shader_parameter/edge_color = Color(0, 0, 0, 1)
-shader_parameter/size = Vector2(7.5, 6.25)
+shader_parameter/size = Vector2(7.5000005, 6.25)
 shader_parameter/border_size = 0.01
 shader_parameter/border_fade_in = 0.05
 shader_parameter/border_fade_out = 0.0
@@ -21,30 +21,30 @@ shader_parameter/corner_radius = 0.2
 shader_parameter/roughness = 0.3
 shader_parameter/grain_amount = 0.02
 
-[sub_resource type="QuadMesh" id="QuadMesh_3236q"]
+[sub_resource type="QuadMesh" id="QuadMesh_2rgug"]
 size = Vector2(0.3, 0.25)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_bu024"]
 size = Vector3(0.3, 0.25, 0.02)
 
-[node name="Settings" type="StaticBody3D"]
+[node name="Settings" type="StaticBody3D" unique_id=613377718]
 collision_layer = 6
 collision_mask = 0
 script = ExtResource("1_gw2gi")
 
-[node name="Panel" parent="." instance=ExtResource("1_78ups")]
+[node name="Panel" parent="." unique_id=1454829701 instance=ExtResource("1_78ups")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -7.45058e-09, 0)
-material_override = SubResource("ShaderMaterial_00j7x")
-mesh = SubResource("QuadMesh_3236q")
+material_override = SubResource("ShaderMaterial_tmdm3")
+mesh = SubResource("QuadMesh_2rgug")
 skeleton = NodePath("../..")
 size = Vector2(0.3, 0.25)
 
-[node name="Close" parent="." instance=ExtResource("3_2gpr3")]
+[node name="Close" parent="." unique_id=2026497724 instance=ExtResource("3_2gpr3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.12, 0.1, 0)
 label = "close"
 icon = true
 
-[node name="Name" type="Label3D" parent="."]
+[node name="Name" type="Label3D" parent="." unique_id=462646740]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.14, 0.1, 0)
 pixel_size = 0.001
 render_priority = 15
@@ -54,7 +54,7 @@ font_size = 24
 outline_size = 0
 horizontal_alignment = 0
 
-[node name="IDLabel" type="Label3D" parent="."]
+[node name="IDLabel" type="Label3D" parent="." unique_id=583726990]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.14, 0.06, 0)
 pixel_size = 0.001
 render_priority = 15
@@ -64,11 +64,11 @@ font_size = 18
 outline_size = 0
 horizontal_alignment = 0
 
-[node name="IDInput" parent="." instance=ExtResource("4_upyp3")]
+[node name="IDInput" parent="." unique_id=779926661 instance=ExtResource("4_upyp3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.03, 0.06, 0)
 disabled = true
 
-[node name="ColorWheelLabel" type="Label3D" parent="."]
+[node name="ColorWheelLabel" type="Label3D" parent="." unique_id=1304264518]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.14, 0.02, 0)
 pixel_size = 0.001
 render_priority = 15
@@ -78,13 +78,13 @@ font_size = 18
 outline_size = 0
 horizontal_alignment = 0
 
-[node name="ColorWheelButton" parent="." instance=ExtResource("3_2gpr3")]
+[node name="ColorWheelButton" parent="." unique_id=2060532743 instance=ExtResource("3_2gpr3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00999999, 0.02, 0)
 label = "check"
 icon = true
 toggleable = true
 
-[node name="BrightnessLabel" type="Label3D" parent="."]
+[node name="BrightnessLabel" type="Label3D" parent="." unique_id=95593094]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.14, -0.03, 0)
 pixel_size = 0.001
 render_priority = 15
@@ -94,13 +94,13 @@ font_size = 18
 outline_size = 0
 horizontal_alignment = 0
 
-[node name="BrightnessButton" parent="." instance=ExtResource("3_2gpr3")]
+[node name="BrightnessButton" parent="." unique_id=439378774 instance=ExtResource("3_2gpr3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00999999, -0.03, 0)
 label = "check"
 icon = true
 toggleable = true
 
-[node name="ModesLabel" type="Label3D" parent="."]
+[node name="ModesLabel" type="Label3D" parent="." unique_id=39068826]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.14, -0.08, 0)
 pixel_size = 0.001
 render_priority = 15
@@ -110,12 +110,12 @@ font_size = 18
 outline_size = 0
 horizontal_alignment = 0
 
-[node name="ModesButton" parent="." instance=ExtResource("3_2gpr3")]
+[node name="ModesButton" parent="." unique_id=377144818 instance=ExtResource("3_2gpr3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00999999, -0.08, 0)
 label = "check"
 icon = true
 toggleable = true
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=762823303]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.01)
 shape = SubResource("BoxShape3D_bu024")

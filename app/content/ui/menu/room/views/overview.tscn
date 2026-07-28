@@ -1,8 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://dd71loi64gnmp"]
+[gd_scene format=3 uid="uid://dd71loi64gnmp"]
 
 [ext_resource type="PackedScene" uid="uid://bsjqdvkt0u87c" path="res://content/ui/components/button/button.tscn" id="1_fteh8"]
-[ext_resource type="Script" path="res://content/ui/menu/room/views/overview.gd" id="1_jesad"]
-[ext_resource type="Shader" path="res://content/ui/components/panel/glass.gdshader" id="3_2yl2s"]
+[ext_resource type="Script" uid="uid://qhsddqvwwe2a" path="res://content/ui/menu/room/views/overview.gd" id="1_jesad"]
+[ext_resource type="Shader" uid="uid://iy8r68qd33qd" path="res://content/ui/components/panel/glass.gdshader" id="3_2yl2s"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_n3lbn"]
 render_priority = -3
@@ -21,20 +21,20 @@ shader_parameter/grain_amount = 0.02
 [sub_resource type="QuadMesh" id="QuadMesh_l1dos"]
 size = Vector2(0.42, 0.32)
 
-[node name="Overview" type="Node3D"]
+[node name="Overview" type="Node3D" unique_id=1450432100]
 script = ExtResource("1_jesad")
 
-[node name="EditButton" parent="." instance=ExtResource("1_fteh8")]
+[node name="EditButton" parent="." unique_id=1865229652 instance=ExtResource("1_fteh8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.04, -0.12, 0)
 label = "edit"
 icon = true
 
-[node name="FixButton" parent="." instance=ExtResource("1_fteh8")]
+[node name="FixButton" parent="." unique_id=924306791 instance=ExtResource("1_fteh8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1, -0.12, 0)
 label = "healing"
 icon = true
 
-[node name="Label3D" type="Label3D" parent="."]
+[node name="Label3D" type="Label3D" parent="." unique_id=2057764465]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.02, -0.08, 0.01)
 pixel_size = 0.001
 render_priority = 15
@@ -44,7 +44,7 @@ font_size = 18
 outline_size = 0
 horizontal_alignment = 0
 
-[node name="Background" type="MeshInstance3D" parent="."]
+[node name="Background" type="MeshInstance3D" parent="." unique_id=548251927]
 transform = Transform3D(1, 0, 0, 0, 1, 1.06581e-14, 0, -1.06581e-14, 1, 0.21, -0.16, 0)
 visible = false
 material_override = SubResource("ShaderMaterial_n3lbn")

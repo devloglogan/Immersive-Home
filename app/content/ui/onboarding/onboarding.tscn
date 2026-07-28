@@ -1,9 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://bhyddd1f0ry1x"]
+[gd_scene format=3 uid="uid://bhyddd1f0ry1x"]
 
-[ext_resource type="Script" path="res://content/ui/onboarding/onboarding.gd" id="1_k4yvw"]
-[ext_resource type="Shader" path="res://content/ui/components/panel/glass.gdshader" id="2_87aan"]
+[ext_resource type="Script" uid="uid://cukstexvp26gg" path="res://content/ui/onboarding/onboarding.gd" id="1_k4yvw"]
+[ext_resource type="Shader" uid="uid://iy8r68qd33qd" path="res://content/ui/components/panel/glass.gdshader" id="2_87aan"]
 [ext_resource type="PackedScene" uid="uid://bsjqdvkt0u87c" path="res://content/ui/components/button/button.tscn" id="3_hlpow"]
-[ext_resource type="Script" path="res://content/functions/camera_follower.gd" id="4_u1o74"]
+[ext_resource type="Script" uid="uid://u5d0qg5122uu" path="res://content/functions/camera_follower.gd" id="4_u1o74"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_nfwtf"]
 size = Vector3(0.5, 0.3, 0.01)
@@ -25,12 +25,12 @@ shader_parameter/grain_amount = 0.02
 [sub_resource type="QuadMesh" id="QuadMesh_ij2lj"]
 size = Vector2(0.5, 0.3)
 
-[node name="Onboarding" type="StaticBody3D"]
+[node name="Onboarding" type="StaticBody3D" unique_id=786126839]
 collision_layer = 6
 collision_mask = 0
 script = ExtResource("1_k4yvw")
 
-[node name="Label3D2" type="Label3D" parent="."]
+[node name="Label3D2" type="Label3D" parent="." unique_id=2096897787]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.23, -0.11, 0.001)
 pixel_size = 0.001
 render_priority = 30
@@ -42,14 +42,14 @@ horizontal_alignment = 0
 autowrap_mode = 3
 width = 470.0
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1435810641]
 shape = SubResource("BoxShape3D_nfwtf")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=2103596810]
 material_override = SubResource("ShaderMaterial_d2ck8")
 mesh = SubResource("QuadMesh_ij2lj")
 
-[node name="GettingStartedLabel" type="Label3D" parent="."]
+[node name="GettingStartedLabel" type="Label3D" parent="." unique_id=2039623760]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.23, 0.13, 0.001)
 pixel_size = 0.001
 render_priority = 30
@@ -66,17 +66,17 @@ vertical_alignment = 0
 autowrap_mode = 3
 width = 470.0
 
-[node name="GettingStartedButton" parent="." instance=ExtResource("3_hlpow")]
+[node name="GettingStartedButton" parent="." unique_id=2042096877 instance=ExtResource("3_hlpow")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.06, -0.11, 0.001)
 label = "open_in_new"
 icon = true
 
-[node name="CloseButton" parent="." instance=ExtResource("3_hlpow")]
+[node name="CloseButton" parent="." unique_id=1858084030 instance=ExtResource("3_hlpow")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.21, -0.11, 0.001)
 label = "done"
 icon = true
 
-[node name="CloseLabel" type="Label3D" parent="."]
+[node name="CloseLabel" type="Label3D" parent="." unique_id=2137664748]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.18, -0.11, 0.001)
 pixel_size = 0.001
 render_priority = 30
@@ -88,6 +88,6 @@ horizontal_alignment = 2
 autowrap_mode = 3
 width = 470.0
 
-[node name="CameraFollower" type="Node" parent="."]
+[node name="CameraFollower" type="Node" parent="." unique_id=1320232713]
 script = ExtResource("4_u1o74")
 enabled = null

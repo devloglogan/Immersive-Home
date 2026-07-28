@@ -1,10 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://bpta22fahai46"]
+[gd_scene format=3 uid="uid://bpta22fahai46"]
 
-[ext_resource type="Script" path="res://content/ui/menu/room/views/rooms.gd" id="1_3a1oa"]
+[ext_resource type="Script" uid="uid://bkpw6q1uyn4h1" path="res://content/ui/menu/room/views/rooms.gd" id="1_3a1oa"]
 [ext_resource type="PackedScene" uid="uid://bsjqdvkt0u87c" path="res://content/ui/components/button/button.tscn" id="1_y3lty"]
-[ext_resource type="Script" path="res://content/ui/menu/room/views/rooms_map.gd" id="2_2t24u"]
+[ext_resource type="Script" uid="uid://dl1fd48waprp2" path="res://content/ui/menu/room/views/rooms_map.gd" id="2_2t24u"]
 [ext_resource type="PackedScene" uid="uid://blrhy2uccrdn4" path="res://content/ui/components/input/input.tscn" id="2_hstw7"]
-[ext_resource type="Shader" path="res://content/ui/components/panel/glass.gdshader" id="4_jx6i3"]
+[ext_resource type="Shader" uid="uid://iy8r68qd33qd" path="res://content/ui/components/panel/glass.gdshader" id="4_jx6i3"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_ehu5x"]
 size = Vector2(0.2, 0.2)
@@ -27,34 +27,34 @@ shader_parameter/grain_amount = 0.02
 [sub_resource type="QuadMesh" id="QuadMesh_fq44b"]
 size = Vector2(0.42, 0.32)
 
-[node name="Rooms" type="Node3D"]
+[node name="Rooms" type="Node3D" unique_id=1183606909]
 script = ExtResource("1_3a1oa")
 
-[node name="Rooms" type="Node3D" parent="."]
+[node name="Rooms" type="Node3D" parent="." unique_id=1622687057]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.12, -0.16, 0.005)
 script = ExtResource("2_2t24u")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Rooms"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Rooms" unique_id=37674505]
 mesh = SubResource("QuadMesh_ehu5x")
 
-[node name="Button" parent="." instance=ExtResource("1_y3lty")]
+[node name="Button" parent="." unique_id=874483312 instance=ExtResource("1_y3lty")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2, -0.28, 0)
 label = "add"
 icon = true
 
-[node name="Input" parent="." instance=ExtResource("2_hstw7")]
+[node name="Input" parent="." unique_id=1182871618 instance=ExtResource("2_hstw7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.09, -0.28, 0)
 text = "Room 1"
 disabled = true
 
-[node name="Background" type="MeshInstance3D" parent="."]
+[node name="Background" type="MeshInstance3D" parent="." unique_id=1194857557]
 transform = Transform3D(1, 0, 0, 0, 1, 1.06581e-14, 0, -1.06581e-14, 1, 0.21, -0.16, 0)
 visible = false
 material_override = SubResource("ShaderMaterial_dah0r")
 mesh = SubResource("QuadMesh_fq44b")
 skeleton = NodePath("../..")
 
-[node name="SyncRoomsLabel" type="Label3D" parent="."]
+[node name="SyncRoomsLabel" type="Label3D" parent="." unique_id=1242363823]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.25, -0.23, 0)
 pixel_size = 0.001
 text = "Sync Room"
@@ -62,12 +62,12 @@ font_size = 18
 outline_size = 0
 horizontal_alignment = 0
 
-[node name="SyncRoomsButton" parent="." instance=ExtResource("1_y3lty")]
+[node name="SyncRoomsButton" parent="." unique_id=1520942347 instance=ExtResource("1_y3lty")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.38, -0.23, 0)
 label = "sync"
 icon = true
 
-[node name="DeleteButton" parent="." instance=ExtResource("1_y3lty")]
+[node name="DeleteButton" parent="." unique_id=332404055 instance=ExtResource("1_y3lty")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.25, -0.28, 0)
 label = "delete"
 icon = true

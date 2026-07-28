@@ -1,8 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://ds60i5n211hi3"]
+[gd_scene format=3 uid="uid://ds60i5n211hi3"]
 
-[ext_resource type="Script" path="res://content/system/miniature/miniature.gd" id="1_b53yn"]
-[ext_resource type="Script" path="res://content/functions/movable.gd" id="2_x7oed"]
-[ext_resource type="Script" path="res://content/system/miniature/entity_select.gd" id="3_tgpny"]
+[ext_resource type="Script" uid="uid://ctxn21qb3dp0u" path="res://content/system/miniature/miniature.gd" id="1_b53yn"]
+[ext_resource type="Script" uid="uid://l2fgupqbucew" path="res://content/functions/movable.gd" id="2_x7oed"]
+[ext_resource type="Script" uid="uid://c26h0hf8x6e8i" path="res://content/system/miniature/entity_select.gd" id="3_tgpny"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_bckw3"]
 
@@ -15,31 +15,31 @@ albedo_color = Color(0.404, 0.22, 0.627, 0.5)
 radius = 0.3
 height = 1.75
 
-[node name="Miniature" type="Node3D"]
+[node name="Miniature" type="Node3D" unique_id=1300042861]
 script = ExtResource("1_b53yn")
 
-[node name="Body" type="StaticBody3D" parent="."]
+[node name="Body" type="StaticBody3D" parent="." unique_id=766520234]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Body"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Body" unique_id=858969799]
 shape = SubResource("BoxShape3D_bckw3")
 disabled = true
 
-[node name="Movable" type="Node" parent="Body"]
+[node name="Movable" type="Node" parent="Body" unique_id=91765823]
 script = ExtResource("2_x7oed")
 restricted = true
 resizable = true
 
-[node name="Small" type="Node3D" parent="Body"]
+[node name="Small" type="Node3D" parent="Body" unique_id=2043299144]
 
-[node name="Model" type="Node3D" parent="Body/Small"]
+[node name="Model" type="Node3D" parent="Body/Small" unique_id=684361587]
 
-[node name="Dots" type="Node3D" parent="Body/Small"]
+[node name="Dots" type="Node3D" parent="Body/Small" unique_id=1181197833]
 
-[node name="Player" type="MeshInstance3D" parent="Body/Small"]
+[node name="Player" type="MeshInstance3D" parent="Body/Small" unique_id=314286203]
 material_override = SubResource("StandardMaterial3D_npsgb")
 mesh = SubResource("CapsuleMesh_f3avi")
 
-[node name="EntitySelect" type="Marker3D" parent="Body"]
+[node name="EntitySelect" type="Marker3D" parent="Body" unique_id=1367472087]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.757576, 0)
 gizmo_extents = 0.1
 script = ExtResource("3_tgpny")

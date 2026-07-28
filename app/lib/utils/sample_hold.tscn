@@ -1,8 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://b4l22m7bxamsc"]
+[gd_scene format=3 uid="uid://b4l22m7bxamsc"]
 
-[ext_resource type="Script" path="res://test/lib/utils/sample_hold/sample_hold.gd" id="1_t0y35"]
+[ext_resource type="Script" uid="uid://clg8m8udxlteu" path="res://test/lib/utils/sample_hold/sample_hold.gd" id="1_t0y35"]
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D" type="Node2D" unique_id=765861990]
 script = ExtResource("1_t0y35")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1688720522]

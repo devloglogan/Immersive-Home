@@ -1,71 +1,71 @@
-[gd_scene load_steps=9 format=3 uid="uid://bswgmclohuqui"]
+[gd_scene format=3 uid="uid://bswgmclohuqui"]
 
-[ext_resource type="Script" path="res://content/system/house/room/room.gd" id="1_fccq0"]
-[ext_resource type="Script" path="res://content/functions/clickable.gd" id="1_ugebq"]
+[ext_resource type="Script" uid="uid://bp7dxoksbkibt" path="res://content/system/house/room/room.gd" id="1_fccq0"]
+[ext_resource type="Script" uid="uid://c4u45cdgobcis" path="res://content/functions/clickable.gd" id="1_ugebq"]
 [ext_resource type="Material" uid="uid://d0i5oae6evn08" path="res://content/system/house/room/states/room.tres" id="3_fmi1g"]
-[ext_resource type="Script" path="res://lib/utils/state_machine/state_machine.gd" id="4_nbbo6"]
-[ext_resource type="Script" path="res://content/system/house/room/states/view.gd" id="6_g066t"]
-[ext_resource type="Script" path="res://content/system/house/room/states/edit.gd" id="7_ap14h"]
+[ext_resource type="Script" uid="uid://cosf0k5ceon5m" path="res://lib/utils/state_machine/state_machine.gd" id="4_nbbo6"]
+[ext_resource type="Script" uid="uid://drlvd2q38hhhj" path="res://content/system/house/room/states/view.gd" id="6_g066t"]
+[ext_resource type="Script" uid="uid://b0niq7bd2pyq1" path="res://content/system/house/room/states/edit.gd" id="7_ap14h"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_08sv0"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_ap613"]
 plane = Plane(0, -1, 0, 0)
 
-[node name="Room" type="Node3D"]
+[node name="Room" type="Node3D" unique_id=848556078]
 script = ExtResource("1_fccq0")
 
-[node name="Floor" type="StaticBody3D" parent="."]
+[node name="Floor" type="StaticBody3D" parent="." unique_id=608967677]
 collision_layer = 24
 collision_mask = 0
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor" unique_id=2054475152]
 shape = SubResource("WorldBoundaryShape3D_08sv0")
 
-[node name="Clickable" type="Node" parent="Floor"]
+[node name="Clickable" type="Node" parent="Floor" unique_id=498409385]
 script = ExtResource("1_ugebq")
 
-[node name="WallMesh" type="MeshInstance3D" parent="."]
+[node name="WallMesh" type="MeshInstance3D" parent="." unique_id=609447298]
 material_override = ExtResource("3_fmi1g")
 
-[node name="CeilingMesh" type="MeshInstance3D" parent="."]
+[node name="CeilingMesh" type="MeshInstance3D" parent="." unique_id=572961114]
 material_override = ExtResource("3_fmi1g")
 
-[node name="WallCollision" type="StaticBody3D" parent="."]
+[node name="WallCollision" type="StaticBody3D" parent="." unique_id=1873998759]
 collision_layer = 24
 collision_mask = 0
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="WallCollision"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WallCollision" unique_id=1179731108]
 
-[node name="Clickable" type="Node" parent="WallCollision"]
+[node name="Clickable" type="Node" parent="WallCollision" unique_id=1093673847]
 script = ExtResource("1_ugebq")
 
-[node name="Ceiling" type="StaticBody3D" parent="."]
+[node name="Ceiling" type="StaticBody3D" parent="." unique_id=1540775979]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
 collision_layer = 24
 collision_mask = 0
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Ceiling"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ceiling" unique_id=1426221066]
 shape = SubResource("WorldBoundaryShape3D_ap613")
 disabled = true
 
-[node name="Clickable" type="Node" parent="Ceiling"]
+[node name="Clickable" type="Node" parent="Ceiling" unique_id=1676424586]
 script = ExtResource("1_ugebq")
 
-[node name="WallCorners" type="Node3D" parent="Ceiling"]
+[node name="WallCorners" type="Node3D" parent="Ceiling" unique_id=1366320030]
 
-[node name="WallEdges" type="Node3D" parent="Ceiling"]
+[node name="WallEdges" type="Node3D" parent="Ceiling" unique_id=1899132867]
 
-[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("current_state")]
+[node name="StateMachine" type="Node" parent="." unique_id=1333873781 node_paths=PackedStringArray("current_state")]
 script = ExtResource("4_nbbo6")
 current_state = NodePath("View")
 
-[node name="View" type="Node" parent="StateMachine"]
+[node name="View" type="Node" parent="StateMachine" unique_id=1462021247]
 script = ExtResource("6_g066t")
 
-[node name="Edit" type="Node" parent="StateMachine"]
+[node name="Edit" type="Node" parent="StateMachine" unique_id=342244808]
 script = ExtResource("7_ap14h")
 
-[node name="Doors" type="Node3D" parent="."]
+[node name="Doors" type="Node3D" parent="." unique_id=1932612405]
 
-[node name="Entities" type="Node3D" parent="."]
+[node name="Entities" type="Node3D" parent="." unique_id=267639036]

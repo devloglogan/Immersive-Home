@@ -1,11 +1,11 @@
-[gd_scene load_steps=12 format=3 uid="uid://wgnowarejk5y"]
+[gd_scene format=3 uid="uid://wgnowarejk5y"]
 
-[ext_resource type="Script" path="res://content/ui/components/select/select.gd" id="1_0yka7"]
+[ext_resource type="Script" uid="uid://bdplw4rol8anh" path="res://content/ui/components/select/select.gd" id="1_0yka7"]
 [ext_resource type="PackedScene" uid="uid://dnam3fe36gg62" path="res://content/ui/components/panel/panel.tscn" id="2_5mspw"]
-[ext_resource type="Shader" path="res://content/ui/components/panel/glass.gdshader" id="3_8yxox"]
+[ext_resource type="Shader" uid="uid://iy8r68qd33qd" path="res://content/ui/components/panel/glass.gdshader" id="3_8yxox"]
 [ext_resource type="FontVariation" uid="uid://sshfnckriqxn" path="res://assets/icons/icons.tres" id="4_61i7u"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_81jws"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3jfuq"]
 resource_local_to_scene = true
 render_priority = 10
 shader = ExtResource("3_8yxox")
@@ -20,14 +20,14 @@ shader_parameter/corner_radius = 0.2
 shader_parameter/roughness = 0.3
 shader_parameter/grain_amount = 0.02
 
-[sub_resource type="QuadMesh" id="QuadMesh_3uyfs"]
+[sub_resource type="QuadMesh" id="QuadMesh_issjb"]
 size = Vector2(0.2, 0.04)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_uwnbp"]
 resource_local_to_scene = true
 size = Vector3(0.2, 0.04, 0.01)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_t7hp2"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_241k6"]
 resource_local_to_scene = true
 render_priority = 10
 shader = ExtResource("3_8yxox")
@@ -42,7 +42,7 @@ shader_parameter/corner_radius = 0.2
 shader_parameter/roughness = 0.3
 shader_parameter/grain_amount = 0.02
 
-[sub_resource type="QuadMesh" id="QuadMesh_b0yu6"]
+[sub_resource type="QuadMesh" id="QuadMesh_7f402"]
 size = Vector2(0.02, 0.01)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_cv4hj"]
@@ -53,22 +53,22 @@ size = Vector3(0.02, 0.01, 0.01)
 resource_local_to_scene = true
 size = Vector3(0.2, 0.04, 0.01)
 
-[node name="Select" type="Node3D" groups=["ui_focus"]]
+[node name="Select" type="Node3D" unique_id=1607171183 groups=["ui_focus"]]
 script = ExtResource("1_0yka7")
 size = Vector3(0.2, 0.04, 0.01)
 
-[node name="Body" type="StaticBody3D" parent="." groups=["ui_focus_skip"]]
+[node name="Body" type="StaticBody3D" parent="." unique_id=2041922852 groups=["ui_focus_skip"]]
 collision_layer = 6
 collision_mask = 0
 
-[node name="Panel" parent="Body" instance=ExtResource("2_5mspw")]
+[node name="Panel" parent="Body" unique_id=774554395 instance=ExtResource("2_5mspw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.01)
-material_override = SubResource("ShaderMaterial_81jws")
-mesh = SubResource("QuadMesh_3uyfs")
+material_override = SubResource("ShaderMaterial_3jfuq")
+mesh = SubResource("QuadMesh_issjb")
 skeleton = NodePath("../..")
 size = Vector2(0.2, 0.04)
 
-[node name="Label" type="Label3D" parent="Body"]
+[node name="Label" type="Label3D" parent="Body" unique_id=1376662914]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.09, 0, 0.01)
 pixel_size = 0.001
 double_sided = false
@@ -78,7 +78,7 @@ font_size = 18
 outline_size = 0
 horizontal_alignment = 0
 
-[node name="Icon" type="Label3D" parent="Body"]
+[node name="Icon" type="Label3D" parent="Body" unique_id=186486617]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1, 0, 0.01)
 pixel_size = 0.001
 double_sided = false
@@ -89,32 +89,32 @@ font_size = 30
 outline_size = 0
 horizontal_alignment = 2
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Body"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Body" unique_id=770674865]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.005)
 shape = SubResource("BoxShape3D_uwnbp")
 
-[node name="Options" type="StaticBody3D" parent="."]
+[node name="Options" type="StaticBody3D" parent="." unique_id=1496763419]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1, -0.02, 0.02)
 visible = false
 collision_layer = 6
 collision_mask = 0
 
-[node name="Panel" parent="Options" instance=ExtResource("2_5mspw")]
+[node name="Panel" parent="Options" unique_id=697920702 instance=ExtResource("2_5mspw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.01, -0.005, 0)
-material_override = SubResource("ShaderMaterial_t7hp2")
-mesh = SubResource("QuadMesh_b0yu6")
+material_override = SubResource("ShaderMaterial_241k6")
+mesh = SubResource("QuadMesh_7f402")
 skeleton = NodePath("../..")
 size = Vector2(0.02, 0.01)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Options"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Options" unique_id=1605576539]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.01, -0.005, -0.005)
 shape = SubResource("BoxShape3D_cv4hj")
 disabled = true
 
-[node name="Area3D" type="Area3D" parent="." groups=["ui_focus_skip"]]
+[node name="Area3D" type="Area3D" parent="." unique_id=118737307 groups=["ui_focus_skip"]]
 collision_layer = 4
 collision_mask = 0
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1857791271]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.015)
 shape = SubResource("BoxShape3D_n5ty8")

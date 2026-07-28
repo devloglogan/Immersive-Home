@@ -1,14 +1,14 @@
-[gd_scene load_steps=14 format=3 uid="uid://4hai6lp64m2o"]
+[gd_scene format=3 uid="uid://4hai6lp64m2o"]
 
 [ext_resource type="PackedScene" uid="uid://bsjqdvkt0u87c" path="res://content/ui/components/button/button.tscn" id="1_52ufi"]
-[ext_resource type="Script" path="res://content/ui/menu/settings/menus/features_menu.gd" id="1_imqs2"]
-[ext_resource type="Script" path="res://content/ui/components/tabs/tabs.gd" id="3_cwu20"]
-[ext_resource type="Shader" path="res://content/ui/components/panel/glass.gdshader" id="4_v4u0l"]
+[ext_resource type="Script" uid="uid://jg5g4yhs0701" path="res://content/ui/menu/settings/menus/features_menu.gd" id="1_imqs2"]
+[ext_resource type="Script" uid="uid://6ue4tknppp0g" path="res://content/ui/components/tabs/tabs.gd" id="3_cwu20"]
+[ext_resource type="Shader" uid="uid://iy8r68qd33qd" path="res://content/ui/components/panel/glass.gdshader" id="4_v4u0l"]
 [ext_resource type="FontVariation" uid="uid://sshfnckriqxn" path="res://assets/icons/icons.tres" id="5_3vfb4"]
 [ext_resource type="Texture2D" uid="uid://bl33klueufwja" path="res://assets/cursors/pointer.png" id="6_ypel5"]
 [ext_resource type="Texture2D" uid="uid://churthrr24yhw" path="res://assets/cursors/old.png" id="7_un12x"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_jrgbl"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nuhky"]
 resource_local_to_scene = true
 render_priority = 10
 shader = ExtResource("4_v4u0l")
@@ -23,18 +23,18 @@ shader_parameter/corner_radius = 0.2
 shader_parameter/roughness = 0.3
 shader_parameter/grain_amount = 0.02
 
-[sub_resource type="QuadMesh" id="QuadMesh_si7x8"]
+[sub_resource type="QuadMesh" id="QuadMesh_kubdl"]
 size = Vector2(0.04, 0.04)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_01skh"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_0qjb7"]
 resource_local_to_scene = true
 size = Vector3(0.04, 0.04, 0.01)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_surd4"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_b6lhx"]
 resource_local_to_scene = true
-size = Vector3(0.04, 0.04, 0.03)
+size = Vector3(0.04, 0.04, 0.005)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_arcnd"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6ejov"]
 resource_local_to_scene = true
 render_priority = 10
 shader = ExtResource("4_v4u0l")
@@ -49,19 +49,27 @@ shader_parameter/corner_radius = 0.2
 shader_parameter/roughness = 0.3
 shader_parameter/grain_amount = 0.02
 
-[sub_resource type="QuadMesh" id="QuadMesh_ajawk"]
+[sub_resource type="QuadMesh" id="QuadMesh_nrs5w"]
 size = Vector2(0.04, 0.04)
 
-[node name="FeaturesMenu" type="Node3D"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_lk0b4"]
+resource_local_to_scene = true
+size = Vector3(0.04, 0.04, 0.01)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_kriuj"]
+resource_local_to_scene = true
+size = Vector3(0.04, 0.04, 0.005)
+
+[node name="FeaturesMenu" type="Node3D" unique_id=1652431313]
 script = ExtResource("1_imqs2")
 
-[node name="VoiceAssist" parent="." instance=ExtResource("1_52ufi")]
+[node name="VoiceAssist" parent="." unique_id=1241206534 instance=ExtResource("1_52ufi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.19, -0.08, 0)
 label = "mic_off"
 icon = true
 toggleable = true
 
-[node name="LabelVoiceAssist" type="Label3D" parent="."]
+[node name="LabelVoiceAssist" type="Label3D" parent="." unique_id=1300621697]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.02, -0.08, 0)
 pixel_size = 0.001
 render_priority = 15
@@ -71,7 +79,7 @@ font_size = 18
 outline_size = 0
 horizontal_alignment = 0
 
-[node name="LabelCursor" type="Label3D" parent="."]
+[node name="LabelCursor" type="Label3D" parent="." unique_id=121330626]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.02, -0.13, 0)
 pixel_size = 0.001
 render_priority = 15
@@ -81,76 +89,70 @@ font_size = 18
 outline_size = 0
 horizontal_alignment = 0
 
-[node name="CursorOptions" type="Node3D" parent="."]
+[node name="CursorOptions" type="Node3D" parent="." unique_id=607650684]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.17, -0.13, 0)
 script = ExtResource("3_cwu20")
 gap = 0.01
 
-[node name="CircleCursor" parent="CursorOptions" instance=ExtResource("1_52ufi")]
+[node name="CircleCursor" parent="CursorOptions" unique_id=1620210929 instance=ExtResource("1_52ufi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.02, 0, 0)
 label = ""
 icon = true
 toggleable = true
 
-[node name="Panel3D" parent="CursorOptions/CircleCursor/Body" index="0"]
-material_override = SubResource("ShaderMaterial_jrgbl")
-mesh = SubResource("QuadMesh_si7x8")
+[node name="Panel3D" parent="CursorOptions/CircleCursor/Body" parent_id_path=PackedInt32Array(1620210929, 582585731) index="0" unique_id=826719316]
+material_override = SubResource("ShaderMaterial_nuhky")
+mesh = SubResource("QuadMesh_kubdl")
 
-[node name="CollisionShape3D" parent="CursorOptions/CircleCursor/Body" index="1"]
-shape = SubResource("BoxShape3D_01skh")
+[node name="CollisionShape3D" parent="CursorOptions/CircleCursor/Body" parent_id_path=PackedInt32Array(1620210929, 582585731) index="1" unique_id=1914507667]
+shape = SubResource("BoxShape3D_0qjb7")
 
-[node name="Label" parent="CursorOptions/CircleCursor/Body" index="2"]
+[node name="Label" parent="CursorOptions/CircleCursor/Body" parent_id_path=PackedInt32Array(1620210929, 582585731) index="2" unique_id=1612546758]
 text = ""
 font = ExtResource("5_3vfb4")
 font_size = 28
 autowrap_mode = 0
 width = 1000.0
 
-[node name="Sprite3D" type="Sprite3D" parent="CursorOptions/CircleCursor/Body/Label" index="0"]
+[node name="Sprite3D" type="Sprite3D" parent="CursorOptions/CircleCursor/Body/Label" index="0" unique_id=492568123]
 transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 0, 0, 0)
 pixel_size = 0.001
 double_sided = false
 render_priority = 20
 texture = ExtResource("6_ypel5")
 
-[node name="CollisionShape3D" parent="CursorOptions/CircleCursor/FingerArea" index="0"]
-shape = SubResource("BoxShape3D_surd4")
+[node name="CollisionShape3D" parent="CursorOptions/CircleCursor/FingerArea" parent_id_path=PackedInt32Array(1620210929, 1149544071) index="0" unique_id=1252761716]
+shape = SubResource("BoxShape3D_b6lhx")
 
-[node name="CollisionShape3D" parent="CursorOptions/CircleCursor/TouchBody" index="0"]
-shape = SubResource("BoxShape3D_01skh")
-
-[node name="RetroCursor" parent="CursorOptions" instance=ExtResource("1_52ufi")]
+[node name="RetroCursor" parent="CursorOptions" unique_id=1271738362 instance=ExtResource("1_52ufi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.07, 0, 0)
 label = ""
 icon = true
 toggleable = true
 
-[node name="Panel3D" parent="CursorOptions/RetroCursor/Body" index="0"]
-material_override = SubResource("ShaderMaterial_arcnd")
-mesh = SubResource("QuadMesh_ajawk")
+[node name="Panel3D" parent="CursorOptions/RetroCursor/Body" parent_id_path=PackedInt32Array(1271738362, 582585731) index="0" unique_id=826719316]
+material_override = SubResource("ShaderMaterial_6ejov")
+mesh = SubResource("QuadMesh_nrs5w")
 
-[node name="CollisionShape3D" parent="CursorOptions/RetroCursor/Body" index="1"]
-shape = SubResource("BoxShape3D_01skh")
+[node name="CollisionShape3D" parent="CursorOptions/RetroCursor/Body" parent_id_path=PackedInt32Array(1271738362, 582585731) index="1" unique_id=1914507667]
+shape = SubResource("BoxShape3D_lk0b4")
 
-[node name="Label" parent="CursorOptions/RetroCursor/Body" index="2"]
+[node name="Label" parent="CursorOptions/RetroCursor/Body" parent_id_path=PackedInt32Array(1271738362, 582585731) index="2" unique_id=1612546758]
 text = ""
 font = ExtResource("5_3vfb4")
 font_size = 28
 autowrap_mode = 0
 width = 1000.0
 
-[node name="Sprite3D" type="Sprite3D" parent="CursorOptions/RetroCursor/Body/Label" index="0"]
+[node name="Sprite3D" type="Sprite3D" parent="CursorOptions/RetroCursor/Body/Label" index="0" unique_id=1520488071]
 pixel_size = 0.001
 double_sided = false
 texture_filter = 0
 render_priority = 20
 texture = ExtResource("7_un12x")
 
-[node name="CollisionShape3D" parent="CursorOptions/RetroCursor/FingerArea" index="0"]
-shape = SubResource("BoxShape3D_surd4")
-
-[node name="CollisionShape3D" parent="CursorOptions/RetroCursor/TouchBody" index="0"]
-shape = SubResource("BoxShape3D_01skh")
+[node name="CollisionShape3D" parent="CursorOptions/RetroCursor/FingerArea" parent_id_path=PackedInt32Array(1271738362, 1149544071) index="0" unique_id=1252761716]
+shape = SubResource("BoxShape3D_kriuj")
 
 [editable path="CursorOptions/CircleCursor"]
 [editable path="CursorOptions/RetroCursor"]

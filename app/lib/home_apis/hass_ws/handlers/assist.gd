@@ -35,9 +35,9 @@ func _init(hass: HASS_API):
 
 	api.connection.on_packed_received.connect(handle_message)
 
-func start_wakeword():
+func start_wakeword() -> bool:
 	if pipe_running:
-		return
+		return false
 
 	api.connection.send_packet({
 		"type": "assist_pipeline/run",
@@ -50,8 +50,10 @@ func start_wakeword():
 		"timeout": 60
 	}, true)
 
+	return true
+
 func send_data(data: PackedByteArray):
-	
+
 	# prepend the handler id to the data in 8 bits
 	if pipe_running:
 		var stream = PackedByteArray()
@@ -81,7 +83,7 @@ func handle_message(message: Dictionary):
 
 			if event["data"]["wake_word_output"].has("wake_word_phrase") == false:
 				return
-			
+
 			wake_word = event["data"]["wake_word_output"]["wake_word_phrase"]
 		"stt-end":
 			if pipe_running == false:
@@ -112,7 +114,7 @@ func handle_message(message: Dictionary):
 
 			if response[0] != HTTPRequest.RESULT_SUCCESS:
 				return
-			
+
 			var sound = AudioStreamMP3.new()
 			sound.data = response[3]
 

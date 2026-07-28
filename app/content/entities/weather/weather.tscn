@@ -1,10 +1,10 @@
-[gd_scene load_steps=4351 format=3 uid="uid://bkoybnltrq5uq"]
+[gd_scene format=3 uid="uid://bkoybnltrq5uq"]
 
-[ext_resource type="Script" path="res://content/entities/weather/weather.gd" id="1_f8t6i"]
+[ext_resource type="Script" uid="uid://ubrwgss1reuy" path="res://content/entities/weather/weather.gd" id="1_f8t6i"]
 [ext_resource type="Texture2D" uid="uid://caqghtbin4b02" path="res://assets/weather/lottie/clear-day.png" id="2_l4uh1"]
 [ext_resource type="Texture2D" uid="uid://h1cl8ixk3d7p" path="res://assets/weather/lottie/clear-night.png" id="3_5h3tr"]
 [ext_resource type="FontVariation" uid="uid://sshfnckriqxn" path="res://assets/icons/icons.tres" id="3_nddfm"]
-[ext_resource type="Script" path="res://content/functions/movable.gd" id="4_5wwtr"]
+[ext_resource type="Script" uid="uid://l2fgupqbucew" path="res://content/functions/movable.gd" id="4_5wwtr"]
 [ext_resource type="Texture2D" uid="uid://bn4tjmnvn16k2" path="res://assets/weather/lottie/code-red.png" id="4_573nf"]
 [ext_resource type="Texture2D" uid="uid://ca1dib2528x55" path="res://assets/weather/lottie/drizzle.png" id="5_h0ch3"]
 [ext_resource type="Texture2D" uid="uid://b8ts1h5ketlht" path="res://assets/weather/lottie/fog.png" id="6_7yln5"]
@@ -18434,7 +18434,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ka35e")
 }],
-"loop": true,
+"loop": 1,
 "name": &"clear-day",
 "speed": 60.0
 }, {
@@ -19522,7 +19522,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_7scjm")
 }],
-"loop": true,
+"loop": 1,
 "name": &"clear-night",
 "speed": 60.0
 }, {
@@ -19530,7 +19530,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("4_573nf")
 }],
-"loop": true,
+"loop": 1,
 "name": &"code-red",
 "speed": 1.0
 }, {
@@ -20618,7 +20618,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_7jppi")
 }],
-"loop": true,
+"loop": 1,
 "name": &"drizzle",
 "speed": 60.0
 }, {
@@ -21706,7 +21706,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_n784w")
 }],
-"loop": true,
+"loop": 1,
 "name": &"fog",
 "speed": 60.0
 }, {
@@ -22794,7 +22794,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_npb72")
 }],
-"loop": true,
+"loop": 1,
 "name": &"hail",
 "speed": 60.0
 }, {
@@ -23882,7 +23882,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_wcgs5")
 }],
-"loop": true,
+"loop": 1,
 "name": &"partly-cloudy-day",
 "speed": 60.0
 }, {
@@ -24970,7 +24970,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_e651h")
 }],
-"loop": true,
+"loop": 1,
 "name": &"rain",
 "speed": 60.0
 }, {
@@ -26058,7 +26058,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_qtf3s")
 }],
-"loop": true,
+"loop": 1,
 "name": &"sleet",
 "speed": 60.0
 }, {
@@ -27146,7 +27146,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_y2s0u")
 }],
-"loop": true,
+"loop": 1,
 "name": &"snow",
 "speed": 60.0
 }, {
@@ -28234,7 +28234,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_35pdu")
 }],
-"loop": true,
+"loop": 1,
 "name": &"thunderstorms",
 "speed": 60.0
 }, {
@@ -29322,7 +29322,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_p8xxu")
 }],
-"loop": true,
+"loop": 1,
 "name": &"thunderstorms-rain",
 "speed": 60.0
 }, {
@@ -30410,25 +30410,25 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_7p70p")
 }],
-"loop": true,
+"loop": 1,
 "name": &"wind",
 "speed": 60.0
 }]
 
-[node name="Weather" type="StaticBody3D" groups=["entity"]]
+[node name="Weather" type="StaticBody3D" unique_id=1982748583 groups=["entity"]]
 script = ExtResource("1_f8t6i")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=748654755]
 shape = SubResource("BoxShape3D_6bo5j")
 
-[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="." unique_id=1477431708]
 transform = Transform3D(0.28, 0, 0, 0, 0.28, 0, 0, 0, 0.28, -0.14, 0.01, 0)
 pixel_size = 0.001
 render_priority = 15
 sprite_frames = SubResource("SpriteFrames_71wxj")
 animation = &"partly-cloudy-day"
 
-[node name="WeatherLabel" type="Label3D" parent="."]
+[node name="WeatherLabel" type="Label3D" parent="." unique_id=1161573710]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.05, 0.02, 0)
 pixel_size = 0.001
 render_priority = 15
@@ -30438,7 +30438,7 @@ font_size = 50
 outline_size = 10
 horizontal_alignment = 0
 
-[node name="TempLabel" type="Label3D" parent="."]
+[node name="TempLabel" type="Label3D" parent="." unique_id=1102396032]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.02, -0.03, 0)
 pixel_size = 0.001
 render_priority = 15
@@ -30448,7 +30448,7 @@ font_size = 30
 outline_size = 6
 horizontal_alignment = 0
 
-[node name="TempIcon" type="Label3D" parent="."]
+[node name="TempIcon" type="Label3D" parent="." unique_id=889741500]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.04, -0.03, 0)
 pixel_size = 0.001
 render_priority = 15
@@ -30458,7 +30458,7 @@ font = ExtResource("3_nddfm")
 font_size = 30
 outline_size = 6
 
-[node name="HumidIcon" type="Label3D" parent="."]
+[node name="HumidIcon" type="Label3D" parent="." unique_id=431020441]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.11, -0.03, 0)
 pixel_size = 0.001
 render_priority = 15
@@ -30468,7 +30468,7 @@ font = ExtResource("3_nddfm")
 font_size = 30
 outline_size = 6
 
-[node name="HumidLabel" type="Label3D" parent="."]
+[node name="HumidLabel" type="Label3D" parent="." unique_id=1985365147]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.13, -0.03, 0)
 pixel_size = 0.001
 render_priority = 15
@@ -30478,6 +30478,6 @@ font_size = 30
 outline_size = 6
 horizontal_alignment = 0
 
-[node name="Movable" type="Node" parent="."]
+[node name="Movable" type="Node" parent="." unique_id=698812636]
 script = ExtResource("4_5wwtr")
 resizable = true

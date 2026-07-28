@@ -1,6 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://b5buw1sas18n4"]
+[gd_scene format=3 uid="uid://b5buw1sas18n4"]
 
-[ext_resource type="Script" path="res://content/system/dot/dot.gd" id="1_vdpux"]
+[ext_resource type="Script" uid="uid://cnphvhxidwg4l" path="res://content/system/dot/dot.gd" id="1_vdpux"]
 [ext_resource type="AudioStream" uid="uid://du7ur0lu28cvn" path="res://assets/sound/finger-snap.mp3" id="3_04fcm"]
 [ext_resource type="FontVariation" uid="uid://sshfnckriqxn" path="res://assets/icons/icons.tres" id="4_504vw"]
 
@@ -12,13 +12,13 @@ radius = 0.1
 custom_solver_bias = 0.2
 radius = 0.2
 
-[node name="Dot" type="StaticBody3D"]
+[node name="Dot" type="StaticBody3D" unique_id=1160439849]
 script = ExtResource("1_vdpux")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1476730488]
 shape = SubResource("SphereShape3D_3wgjq")
 
-[node name="Label3D" type="Label3D" parent="."]
+[node name="Label3D" type="Label3D" parent="." unique_id=1156010666]
 pixel_size = 0.002
 billboard = 1
 text = "lightbulb"
@@ -26,14 +26,14 @@ font = ExtResource("4_504vw")
 font_size = 100
 outline_size = 18
 
-[node name="Area3D" type="Area3D" parent="."]
+[node name="Area3D" type="Area3D" parent="." unique_id=378492065]
 collision_layer = 4
 collision_mask = 0
 monitoring = false
 
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="Area3D"]
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Area3D" unique_id=77423539]
 shape = SubResource("SphereShape3D_y1ne8")
 
-[node name="SnapSound" type="AudioStreamPlayer" parent="."]
+[node name="SnapSound" type="AudioStreamPlayer" parent="." unique_id=1321950924]
 stream = ExtResource("3_04fcm")
 volume_db = -20.0

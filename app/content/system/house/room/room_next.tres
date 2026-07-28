@@ -1,6 +1,6 @@
-[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://xehjkoeofqc"]
+[gd_resource type="ShaderMaterial" format=3 uid="uid://xehjkoeofqc"]
 
-[ext_resource type="Shader" path="res://content/system/house/room/room_next.gdshader" id="1_hwtkw"]
+[ext_resource type="Shader" uid="uid://bqadvhjqveadv" path="res://content/system/house/room/room_next.gdshader" id="1_hwtkw"]
 
 [resource]
 render_priority = -99

@@ -1,6 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://wewhef3qmulp"]
+[gd_scene format=3 uid="uid://wewhef3qmulp"]
 
-[ext_resource type="Script" path="res://content/ui/components/tabs/tabs_content.gd" id="1_ljgkj"]
+[ext_resource type="Script" uid="uid://bhud0on0xwodk" path="res://content/ui/components/tabs/tabs_content.gd" id="1_ljgkj"]
 
-[node name="TabsContent" type="Node3D"]
+[node name="TabsContent" type="Node3D" unique_id=1176887143]
 script = ExtResource("1_ljgkj")
